@@ -13,7 +13,7 @@ header {
     font-size: larger
 }
 
-#timer {
+#countDown {
     position:fixed;
     right: 0;
     top: 0;
