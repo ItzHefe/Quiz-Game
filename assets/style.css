@@ -6,6 +6,10 @@ header {
     justify-content: center;
 }
 
+body {
+    background-color: blanchedalmond;
+}
+
 #HSLink {
     position: fixed;
     left: 0;
@@ -25,9 +29,51 @@ p {
     justify-content: center;
 }
 
-#sButton {
+#question, #answers, .controls {
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
+.container {
+    width: 800px;
+    max-width: 80%;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 0 5px 1px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-grid {
+    display: grid;
+    gap: 5px;
+    margin: 20px 0;
+}
+
+.controls {
+    gap: 5px;
+}
+
+.btn {
+    border: 1px solid rgb(75, 75, 245);
+    background-color: lightskyblue;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.btn:hover {
+    border: 2px solid black;
+}
+
+.start-btn, .next-btn {
+    font-size: larger;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.hide {
+    display: none;
 }

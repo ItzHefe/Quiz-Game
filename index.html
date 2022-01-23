@@ -11,7 +11,7 @@
     <Header>Coding Quiz Game</Header>
 
     <div id="HSLink">
-        <a href="file:///C:/Users/jeffr/Desktop/GitHub/Quiz-Game/Quiz-Game/highscores.html">View HighScores!</a>
+        <a href="Highscore link placeholder">View HighScores!</a>
     </div>
 
     <div id="countDown">
@@ -21,8 +21,25 @@
     <p>Answer the following coding related questions to test your coding knowledge. Don't waste too much time on each question &#128521;
     </p>
 
-    <div id="sButton">
-        <button id="start-game">Start Game</button>
+    <div class="container">
+
+      <div id="question-container" class="hide">
+
+        <div id='question'>Question</div>
+        <div id='answers' class="btn-grid">
+          <button class="btn">Answer 1</button>
+          <button class="btn">Answer 2</button>
+          <button class="btn">Answer 3</button>
+          <button class="btn">Answer 4</button>
+        </div>
+
+      </div>
+
+      <div class="controls">
+        <button id="start-btn" class="start-btn btn">Start Game</button>
+        <button id="next-btn" class="next-btn btn hide">Next</button>
+      </div>  
+
     </div>
 
 
