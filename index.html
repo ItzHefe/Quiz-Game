@@ -11,7 +11,7 @@
     <Header>Coding Quiz Game</Header>
 
     <div id="HSLink">
-        <a href="Highscore link placeholder">View HighScores!</a>
+        <a href="./highscores.html">View High Scores!</a>
     </div>
 
     <div id="countDown">
@@ -38,7 +38,16 @@
       <div class="controls">
         <button id="start-btn" class="start-btn btn">Start Game</button>
         <button id="next-btn" class="next-btn btn hide">Next</button>
+        <button onclick="window.location.href='./highscores.html'"id="hs-btn" class="hs-btn btn hide">High Scores</button>
       </div>  
+
+      <div class="feedback hide">
+        <p id="userResponse"> Correct!</p>
+      </div>
+
+      <div class="quiz-end hide">
+        <p>All Done!</p>
+      </div>
 
     </div>
 

@@ -74,6 +74,11 @@ p {
     padding: 10px 20px;
 }
 
+.feedback {
+    font-style: italic;
+    border-top: black solid 1px;
+}
+
 .hide {
     display: none;
 }

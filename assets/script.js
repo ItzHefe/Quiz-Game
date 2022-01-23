@@ -4,6 +4,10 @@ var nextQ = document.querySelector('#next-btn');
 var questionContainerEl = document.querySelector('#question-container');
 var questionEl = document.querySelector('#question');
 var answerBtnEl = document.querySelector('#answers');
+var userFeedbackEl = document.querySelector('.feedback');
+var quizEndEl = document.querySelector('.quiz-end')
+var timeInterval
+var timeLeft = 75
 
 let currentQuestionIndex, nextQuestion
 
@@ -13,6 +17,21 @@ nextQ.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion()
 })
+
+function countDown() {
+    timeInterval = setInterval(function() { 
+        timeLeft--;
+        timerEl.textContent = "Time: " + timeLeft; 
+        if (timeLeft === 0) {
+            clearInterval(timeInterval);
+        }
+        // if (currentQuestionIndex === 4) {
+        //     clearInterval(timeInterval);
+        //     quizEndEl.classList.remove('hide')
+        //     localStorage.setItem(timeLeft, JSON.stringify(timeLeft));
+        //     }
+    }, 1000);
+}
 
 function startGame() {
     console.log("game started");
@@ -44,6 +63,7 @@ function showQuestion(question) {
 
 function reset() {
     nextQ.classList.add('hide');
+    userFeedbackEl.classList.add('hide')
     while (answerBtnEl.firstChild) {
         answerBtnEl.removeChild(answerBtnEl.firstChild)
     }
@@ -51,38 +71,49 @@ function reset() {
 
 function selectAnswer(i) {
     var selectedButton = i.target
-    
+    var correct = selectedButton.dataset.correct
+    var userFeedText = document.querySelector('#userResponse')
+    var hsBtn = document.querySelector('#hs-btn')
+
+    if (selectedButton === correct) {
+        userFeedbackEl.classList.remove('hide')
+    } 
+    else { 
+        //trying to show the user in the feedback section the correct answer
+        userFeedbackEl.classList.remove('hide')
+        userFeedText.innerText.replace('Not Correct') 
+    }
+
     if (nextQuestion.length > currentQuestionIndex + 1) {
         nextQ.classList.remove('hide')
     }
-    else {showHighscore}
+    //trying to stop the timer, show "all done", and show high score link all on the answer click if there is no available questions after
+    else {
+        hsBtn.classList.remove('hide')
+        clearInterval(timeInterval)
+        quizEndEl.classList.remove('hide')
+        localStorage.setItem(timeLeft, JSON.stringify(timeLeft));
+    }
 }
-
-function countDown() {
-    var timeLeft = 75;
-  
-    var timeInterval = setInterval(function() { 
-        timeLeft--;
-        timerEl.textContent = "Time: " + timeLeft; 
-        if (timeLeft === 0) {
-            clearInterval(timeInterval);
-        }
-        if (timeLeft === 0) {
-            clearInterval(timer);
-            loseGame();
-          }
-        }, 1000);
-  }
 
   var questions = [
       {
-          question: 'example question 2',
+          question: 'example question 1',
           answers: [
               { text: '4', correct: true }, 
               { text: '22', correct: false },
               { text: '33', correct:false },
               { text: '44', correct:false }
           ]
+      },
+      {
+        question: 'example question 2',
+        answers: [
+            { text: '4', correct: true }, 
+            { text: '22', correct: false },
+            { text: '33', correct:false },
+            { text: '44', correct:false }
+        ]
       },
       {
         question: 'example question 3',
@@ -104,15 +135,6 @@ function countDown() {
       },
       {
         question: 'example question 5',
-        answers: [
-            { text: '4', correct: true }, 
-            { text: '22', correct: false },
-            { text: '33', correct:false },
-            { text: '44', correct:false }
-        ]
-      },
-      {
-        question: 'example question 6',
         answers: [
             { text: '4', correct: true }, 
             { text: '22', correct: false },
