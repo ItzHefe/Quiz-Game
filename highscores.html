@@ -10,17 +10,26 @@
   <body>
     <header>High Scores!</header>
 
-    <p>Score Leaderboard</p>
+    <p>
+      <label> Enter your Initials:</label>
+      <input class="user-initials" id="initals" type="text" Placeholder="Your Initials">
+      <button id="submit-btn" class="submit-btn btn">Submit</button>
+    </p>
+    
+    <p id="leaderBoard" class= "hide">Score Leaderboard</p>
 
-    <div id="sButton">
-      <form>1.</form>
-      <form>2.</form>
-      <form>3.</form>
-      <form>4.</form>
+    <ol id="score-list" class="hide">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ol>
+
+    <div class="sButton">
       <button onclick="window.location.href='./index.html'" id="back-button" class="btn">Go Back</button>
-      <button id="reset-score" class= "reset-btn btn">Reset High Scores</button>
+      <button id="reset-btn" class= "reset-btn btn hide">Reset High Scores</button>
     </div>
 
-    <script src="./assets/script.js"></script>
+    <script src="./assets/leaderboard.js"></script>
   </body>
 </html>

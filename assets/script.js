@@ -19,9 +19,9 @@ nextQ.addEventListener('click', () => {
 })
 
 function countDown() {
-    timeInterval = setInterval(function() { 
+    timeInterval = setInterval(function () {
         timeLeft--;
-        timerEl.textContent = "Time: " + timeLeft; 
+        timerEl.textContent = "Time: " + timeLeft;
         if (timeLeft === 0) {
             clearInterval(timeInterval);
         }
@@ -70,18 +70,18 @@ function reset() {
 }
 
 function selectAnswer(i) {
-    var selectedButton = i.target
-    var correct = selectedButton.dataset.correct
-    var userFeedText = document.querySelector('#userResponse')
-    var hsBtn = document.querySelector('#hs-btn')
+    var selectedButton = i.target;
+    var correctA = selectedButton.true;
+    var userFeedText = document.querySelector('#userResponse');
+    var hsBtn = document.querySelector('#hs-btn');
 
-    if (selectedButton === correct) {
+    if (selectedButton === correctA) {
         userFeedbackEl.classList.remove('hide')
-    } 
-    else { 
+    }
+    else {
         //trying to show the user in the feedback section the correct answer
-        userFeedbackEl.classList.remove('hide')
-        userFeedText.innerText.replace('Not Correct') 
+        userFeedbackEl.classList.remove('hide');
+        userFeedText.innerHTML.replace('Not Correct');
     }
 
     if (nextQuestion.length > currentQuestionIndex + 1) {
@@ -96,50 +96,50 @@ function selectAnswer(i) {
     }
 }
 
-  var questions = [
-      {
-          question: 'example question 1',
-          answers: [
-              { text: '4', correct: true }, 
-              { text: '22', correct: false },
-              { text: '33', correct:false },
-              { text: '44', correct:false }
-          ]
-      },
-      {
+var questions = [
+    {
+        question: 'example question 1',
+        answers: [
+            { text: '4', correct: true },
+            { text: '22', correct: false },
+            { text: '33', correct: false },
+            { text: '44', correct: false }
+        ]
+    },
+    {
         question: 'example question 2',
         answers: [
-            { text: '4', correct: true }, 
+            { text: '4', correct: true },
             { text: '22', correct: false },
-            { text: '33', correct:false },
-            { text: '44', correct:false }
+            { text: '33', correct: false },
+            { text: '44', correct: false }
         ]
-      },
-      {
+    },
+    {
         question: 'example question 3',
         answers: [
-            { text: '4', correct: true }, 
+            { text: '4', correct: true },
             { text: '22', correct: false },
-            { text: '33', correct:false },
-            { text: '44', correct:false }
+            { text: '33', correct: false },
+            { text: '44', correct: false }
         ]
-      },
-      {
+    },
+    {
         question: 'example question 4',
         answers: [
-            { text: '4', correct: true }, 
+            { text: '4', correct: true },
             { text: '22', correct: false },
-            { text: '33', correct:false },
-            { text: '44', correct:false }
+            { text: '33', correct: false },
+            { text: '44', correct: false }
         ]
-      },
-      {
+    },
+    {
         question: 'example question 5',
         answers: [
-            { text: '4', correct: true }, 
+            { text: '4', correct: true },
             { text: '22', correct: false },
-            { text: '33', correct:false },
-            { text: '44', correct:false }
+            { text: '33', correct: false },
+            { text: '44', correct: false }
         ]
-      },
-  ]
+    },
+]

@@ -29,6 +29,11 @@ p {
     justify-content: center;
 }
 
+ol {
+    display: grid;
+    justify-content: center;
+}
+
 #question, #answers, .controls {
     display: flex;
     justify-content: center;
@@ -81,4 +86,10 @@ p {
 
 .hide {
     display: none;
+}
+
+.sButton {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
