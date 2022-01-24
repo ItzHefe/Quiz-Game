@@ -93,3 +93,9 @@ ol {
     justify-content: center;
     gap: 10px;
 }
+
+form {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}

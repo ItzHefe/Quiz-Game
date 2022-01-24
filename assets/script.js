@@ -92,7 +92,7 @@ function selectAnswer(i) {
         hsBtn.classList.remove('hide')
         clearInterval(timeInterval)
         quizEndEl.classList.remove('hide')
-        localStorage.setItem(timeLeft, JSON.stringify(timeLeft));
+        localStorage.setItem('score', JSON.stringify(timeLeft));
     }
 }
 
