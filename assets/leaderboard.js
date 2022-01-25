@@ -6,8 +6,8 @@ var resetBtn = document.querySelector('#reset-btn');
 var navButtonEl = document.querySelector('.sButton');
 
 
-
 submitBtn.addEventListener('click', showLeaders);
+resetBtn.addEventListener('click', resetHS);
 
 function showLeaders(event) {
     event.preventDefault();
@@ -19,10 +19,15 @@ function showLeaders(event) {
 
     //need to store the input form the form and then put it to local storage
 
-    localStorage.setItem("initials", (userIni));
+    localStorage.setItem("initials", (userIni.value));
 }
 
 var userName = localStorage.getItem('initials');
 var points = localStorage.getItem("score");
 
-document.querySelector('#hs1').textContent = (userName + points);
+document.querySelector('#hs1').textContent = (userName + " - " + points);
+
+
+function resetHS() {
+    document.querySelector('#hs1').textContent = "";
+}

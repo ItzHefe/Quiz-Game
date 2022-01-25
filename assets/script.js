@@ -25,11 +25,6 @@ function countDown() {
         if (timeLeft === 0) {
             clearInterval(timeInterval);
         }
-        // if (currentQuestionIndex === 4) {
-        //     clearInterval(timeInterval);
-        //     quizEndEl.classList.remove('hide')
-        //     localStorage.setItem(timeLeft, JSON.stringify(timeLeft));
-        //     }
     }, 1000);
 }
 
@@ -71,27 +66,30 @@ function reset() {
 
 function selectAnswer(i) {
     var selectedButton = i.target;
-    var correctA = selectedButton.true;
+    var correctA = (selectedButton.dataset.correct === "true");
+
     var userFeedText = document.querySelector('#userResponse');
     var hsBtn = document.querySelector('#hs-btn');
 
-    if (selectedButton === correctA) {
+    if (correctA) {
         userFeedbackEl.classList.remove('hide')
+        userFeedText.innerHTML = 'Correct!';
     }
     else {
         //trying to show the user in the feedback section the correct answer
         userFeedbackEl.classList.remove('hide');
-        userFeedText.innerHTML.replace('Not Correct');
+        userFeedText.innerHTML = 'Not Correct';
+        timeLeft -= 5;
     }
 
     if (nextQuestion.length > currentQuestionIndex + 1) {
-        nextQ.classList.remove('hide')
+        nextQ.classList.remove('hide');
     }
     //trying to stop the timer, show "all done", and show high score link all on the answer click if there is no available questions after
     else {
-        hsBtn.classList.remove('hide')
-        clearInterval(timeInterval)
-        quizEndEl.classList.remove('hide')
+        hsBtn.classList.remove('hide');
+        clearInterval(timeInterval);
+        quizEndEl.classList.remove('hide');
         localStorage.setItem('score', JSON.stringify(timeLeft));
     }
 }
