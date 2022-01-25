@@ -6,27 +6,17 @@ var resetBtn = document.querySelector('#reset-btn');
 var navButtonEl = document.querySelector('.sButton');
 
 
-submitBtn.addEventListener('click', showLeaders);
 resetBtn.addEventListener('click', resetHS);
 
-function showLeaders(event) {
-    event.preventDefault();
-    //un-hides the stack ranking
-    leaderEl.classList.remove('hide');
-    leaderListEl.classList.remove('hide');
-    navButtonEl.classList.remove('hide');
-    resetBtn.classList.remove('hide');
 
-    //need to store the input form the form and then put it to local storage
 
-    localStorage.setItem("initials", (userIni.value));
-}
-
-var userName = localStorage.getItem('initials');
-var points = localStorage.getItem("score");
-
-document.querySelector('#hs1').textContent = (userName + " - " + points);
-
+var savedHS = JSON.parse(localStorage.getItem('highScores')) || [];
+savedHS = savedHS.sort((a, b) => b.score - a.score);
+savedHS.forEach(person => {
+    var createLi = document.createElement('li')
+    createLi.textContent = 'Initials: ' + person.initials + " Score: " + person.score;
+    leaderListEl.appendChild(createLi);  
+});
 
 function resetHS() {
     document.querySelector('#hs1').textContent = "";

@@ -8,6 +8,7 @@ var userFeedbackEl = document.querySelector('.feedback');
 var quizEndEl = document.querySelector('.quiz-end')
 var timeInterval
 var timeLeft = 75
+var submitHSBtn = document.querySelector('#submitHS-btn');
 
 let currentQuestionIndex, nextQuestion
 
@@ -80,8 +81,10 @@ function selectAnswer(i) {
         //trying to show the user in the feedback section the correct answer
         userFeedbackEl.classList.remove('hide');
         userFeedText.innerHTML = 'Not Correct';
-        // questions[0].answers[0].correct
+        questions[0].answers[0].correct
         timeLeft -= 5;
+        // "The correct answer was: " + questions[currentQuestionIndex].answer;
+        // loop through answers to try and show the correct one. 
     }
 
     if (nextQuestion.length > currentQuestionIndex + 1) {
@@ -92,9 +95,33 @@ function selectAnswer(i) {
         hsBtn.classList.remove('hide');
         clearInterval(timeInterval);
         quizEndEl.classList.remove('hide');
-        localStorage.setItem('score', JSON.stringify(timeLeft));
+        showInitials(event);
     }
 }
+
+function showInitials(event) {
+    event.preventDefault();
+    var showForm = document.querySelector('#initialsForm');
+    showForm.classList.remove('hide');
+    
+}
+
+function saveHS(formIni) {
+    
+    var savedHS = JSON.parse(localStorage.getItem('highScores')) || [];
+    var userScore = {
+        initials: formIni.value, 
+        score: timeLeft 
+    }
+    savedHS.push(userScore)
+    localStorage.setItem('highScores', JSON.stringify(savedHS));
+
+}
+submitHSBtn.addEventListener('click', function() {
+    var formIni = document.querySelector('#initials');
+    saveHS(formIni);
+});
+
 
 var questions = [
     {

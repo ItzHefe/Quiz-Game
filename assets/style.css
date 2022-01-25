@@ -41,6 +41,7 @@ ol {
 }
 
 .container {
+    margin: auto;
     width: 800px;
     max-width: 80%;
     border-radius: 5px;
@@ -84,18 +85,18 @@ ol {
     border-top: black solid 1px;
 }
 
-.hide {
-    display: none;
-}
-
 .sButton {
     display: flex;
     justify-content: center;
     gap: 10px;
 }
 
-form {
+#initialsForm {
     display: flex;
     justify-content: center;
     padding: 5px;
+}
+
+.hide {
+    display: none !important;
 }
