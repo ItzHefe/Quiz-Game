@@ -70,6 +70,7 @@ function selectAnswer(i) {
 
     var userFeedText = document.querySelector('#userResponse');
     var hsBtn = document.querySelector('#hs-btn');
+    //var btnClicked = $(this);
 
     if (correctA) {
         userFeedbackEl.classList.remove('hide')
@@ -79,6 +80,7 @@ function selectAnswer(i) {
         //trying to show the user in the feedback section the correct answer
         userFeedbackEl.classList.remove('hide');
         userFeedText.innerHTML = 'Not Correct';
+        // questions[0].answers[0].correct
         timeLeft -= 5;
     }
 
