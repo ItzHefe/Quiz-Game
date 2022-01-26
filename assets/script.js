@@ -125,48 +125,48 @@ submitHSBtn.addEventListener('click', function() {
 
 var questions = [
     {
-        question: 'example question 1',
+        question: 'Commonly used data types DO NOT include:',
         answers: [
-            { text: '4', correct: true },
-            { text: '22', correct: false },
-            { text: '33', correct: false },
-            { text: '44', correct: false }
+            { text: 'strings', correct: false },
+            { text: 'booleans', correct: true },
+            { text: 'alerts', correct: false },
+            { text: 'numbers', correct: false }
         ]
     },
     {
-        question: 'example question 2',
+        question: 'Arrays in JavaScript can be used to store _____.',
         answers: [
-            { text: '4', correct: true },
-            { text: '22', correct: false },
-            { text: '33', correct: false },
-            { text: '44', correct: false }
+            { text: 'numbers and strings', correct: false },
+            { text: 'other arrays', correct: false },
+            { text: 'booleans', correct: false },
+            { text: 'all of the above', correct: true }
         ]
     },
     {
-        question: 'example question 3',
+        question: 'The condition of an if / else statement is enclosed within ______.',
         answers: [
-            { text: '4', correct: true },
-            { text: '22', correct: false },
-            { text: '33', correct: false },
-            { text: '44', correct: false }
+            { text: 'quotas', correct: false },
+            { text: 'curly brackets', correct: false },
+            { text: 'parentheses', correct: true },
+            { text: 'square brackets', correct: false }
         ]
     },
     {
-        question: 'example question 4',
+        question: 'String values must be enclosed within ______ when being assigned to variables.',
         answers: [
-            { text: '4', correct: true },
-            { text: '22', correct: false },
-            { text: '33', correct: false },
-            { text: '44', correct: false }
+            { text: 'commas', correct: false },
+            { text: 'curly brackets', correct: true },
+            { text: 'quotas', correct: false },
+            { text: 'parentheses', correct: false }
         ]
     },
     {
-        question: 'example question 5',
+        question: 'A very useful tool used during development and debugging for printing content to the debugger is:',
         answers: [
-            { text: '4', correct: true },
-            { text: '22', correct: false },
-            { text: '33', correct: false },
-            { text: '44', correct: false }
+            { text: 'JavaScript', correct: false },
+            { text: 'terminal / bash', correct: false },
+            { text: 'for loops', correct: true },
+            { text: 'console.log', correct: false }
         ]
     },
 ]
